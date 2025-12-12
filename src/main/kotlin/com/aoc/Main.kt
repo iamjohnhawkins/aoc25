@@ -2,10 +2,12 @@ package com.aoc
 
 import com.aoc.days.Day
 import com.aoc.days.Day01
+import com.aoc.days.Day02
 
 fun main() {
     val days = mapOf<Int, Day>(
-        1 to Day01
+        1 to Day01,
+        2 to Day02
     )
 
     println("🎄 Advent of Code 2025 🎄")
