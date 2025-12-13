@@ -1,7 +1,9 @@
 package com.aoc.days
 
-import kotlin.math.absoluteValue
-
+/**
+ * Day 1: Safe
+ *
+ */
 enum class Direction {
     RIGHT,
     LEFT;
