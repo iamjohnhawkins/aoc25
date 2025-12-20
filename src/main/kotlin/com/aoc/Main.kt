@@ -4,12 +4,14 @@ import com.aoc.days.Day
 import com.aoc.days.Day01
 import com.aoc.days.Day02
 import com.aoc.days.Day03
+import com.aoc.days.Day04
 
 fun main() {
     val days = mapOf<Int, Day>(
         1 to Day01,
         2 to Day02,
-        3 to Day03
+        3 to Day03,
+        4 to Day04
     )
 
     println("🎄 Advent of Code 2025 🎄")
