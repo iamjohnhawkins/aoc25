@@ -47,11 +47,3 @@ aoc25/
 2. Create `src/test/kotlin/com/aoc/days/DayXXTest.kt` with your tests
 3. Add input data to `src/main/resources/inputs/dayXX.txt`
 4. Register the day in `Main.kt`
-
-## Example Solution (Day 1)
-
-The sample implements the "Sonar Sweep" challenge:
-- **Part 1**: Count measurements larger than the previous one
-- **Part 2**: Count sliding window sums that increase
-
-Both solutions use functional approaches with `windowed()`, `map()`, and `count()`.
