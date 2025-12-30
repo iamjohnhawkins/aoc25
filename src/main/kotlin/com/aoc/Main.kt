@@ -7,6 +7,7 @@ import com.aoc.days.Day03
 import com.aoc.days.Day04
 import com.aoc.days.Day05
 import com.aoc.days.Day06
+import com.aoc.days.Day07
 
 fun main() {
     val days = mapOf<Int, Day>(
@@ -15,7 +16,8 @@ fun main() {
         3 to Day03,
         4 to Day04,
         5 to Day05,
-        6 to Day06
+        6 to Day06,
+        7 to Day07
     )
 
     println("🎄 Advent of Code 2025 🎄")
