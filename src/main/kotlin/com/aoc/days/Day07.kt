@@ -23,6 +23,22 @@ fun mapLine(startingLine: List<Char>, line: String): Pair<List<Char>,Int> {
     return Pair(newLine,splitCount)
 }
 
+fun mapCountingBeams(startingLine: List<Long>, line: String): List<Long> {
+    return startingLine.mapIndexed { index, beamCount ->
+        val prev = if (index > 0) line[index - 1] else '.'
+        val next = if (index+1 < line.length) line[index + 1] else '.'
+        val inpPrev = if (index > 0) startingLine[index - 1] else 0
+        val inpNext = if (index+1 < startingLine.size) startingLine[index + 1] else 0
+
+        when (line[index]) {
+            'S' -> 1
+            '^' -> 0
+            '.' -> (beamCount + (if (prev=='^') inpPrev else 0) + (if (next=='^') inpNext else 0))
+            else -> beamCount
+        }
+    }
+}
+
 object Day07 : Day {
     override fun part1(input: String): Int {
         val lines = parseInput(input)
@@ -35,7 +51,15 @@ object Day07 : Day {
             .second
     }
 
-    override fun part2(input: String): Int =0
+    override fun part2(input: String): Long {
+        val lines = parseInput(input)
+        val lineLength = lines.first().length
+        return lines
+            .fold(List(lineLength) { 0L },
+                { acc,str ->
+                    mapCountingBeams(acc,str) })
+            .sumOf { it }
+    }
 
     private fun parseInput(input: String): List<String> = input.lines()
 }

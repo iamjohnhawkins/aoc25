@@ -43,6 +43,28 @@ class Day07Test {
             mapLine(listOf('.','|','.'),".^."))
     }
 
+    // Tests for part 2
+    @Test
+    fun `pt 2 - test starting line conversion`() {
+        assertEquals(listOf(0L,1L,0L),
+            mapCountingBeams(listOf(0L,0L,0L),".S."))
+    }
+    @Test
+    fun `pt 2 - straight beam flow`() {
+        assertEquals(listOf(0L,1L,0L),
+            mapCountingBeams(listOf(0L,1L,0L),"..."))
+    }
+
+    @Test
+    fun `pt 2 - straight split flow`() {
+        assertEquals(listOf(0L,1L,0L),
+            mapCountingBeams(listOf(0L,1L,0L),"^.^"))
+        assertEquals(listOf(1L,0L,1L),
+            mapCountingBeams(listOf(0L,1L,0L),".^."))
+        assertEquals(listOf(0L,2L,0L),
+            mapCountingBeams(listOf(1L,0L,1L),"^.^"))
+    }
+
 
     @Test
      fun `part 1 - sample input`() {
@@ -50,4 +72,9 @@ class Day07Test {
          assertEquals(21, result)
      }
 
+    @Test
+    fun `part 2 - sample input`() {
+        val result = Day07.part2(sampleInput)
+        assertEquals(40, result)
+    }
 }
